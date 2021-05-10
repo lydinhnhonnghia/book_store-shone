@@ -1,0 +1,122 @@
+<div class="content-wrapper">
+    {{!-- <div class="page-header">
+        <h3 class="page-title"> Danh sách truyện </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+            </ol>
+        </nav>
+    </div> --}}
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Danh sách truyện</h4>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#form-modal"
+                        id="btn-show-modal-create">Thêm
+                        mới</button>
+                    </p>
+                    <table class="table table-bordered" id="story-table">
+                        <thead>
+                            <tr>
+                                <th> Stt </th>
+                                <th> Mã sách </th>
+                                <th> Tên sách </th>
+                                <th> Thể loại </th>
+                                <th> Tác giả </th>
+                                <th> Tình trạng </th>
+                                {{!-- <th> Nguồn </th> --}}
+                                <th> Trạng thái </th>
+                                <th> Thao tác </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="block-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-label">Thêm mới thể loại</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="book-code" class="col-form-label">Mã sách</label>
+                            <input type="text" class="form-control" name="code" id="book-code">
+                        </div>
+                        <div class="form-group">
+                            <label for="book-name" class="col-form-label">Tên sách</label>
+                            <input type="text" class="form-control" name="name" id="book-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="source" class="col-form-label">Nguồn</label>
+                            <input type="text" class="form-control" id="source" name="source">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">File upload</label>
+                            <input type="file" name="image" class="file-upload-default">
+                            <div class="input-group col-xs-12">
+                                <input type="text" class="form-control file-upload-info" disabled
+                                    placeholder="Upload Image" name="tmpImage">
+                                <span class="input-group-append">
+                                    <button class="file-upload-browse btn btn-gradient-primary"
+                                        type="button">Upload</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="state" class="col-form-label">Tình trạng</label>
+                            <select name="state" class="form-control">
+                                <option value="">Không chọn</option>
+                                <option value="FULL">Đã full</option>
+                                <option value="NOT FULL">Cập nhật thêm</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Tên thể loại</label>
+                            <select name="categoryOId" class="form-control categories"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Tên tác giả</label>
+                            <select name="authorOId" class="form-control authors"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="short-description" class="col-form-label">Mô tả ngắn</label>
+                            <textarea class="form-control" name="shortDescription" id="short-description"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="description" class="col-form-label">Giới thiệu</label>
+                            <textarea class="form-control" name="description" id="description"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+<script defer src="/assets/js/pages/stuff.js"></script>
+<script defer src="/assets/js/pages/pagination.js"></script>
+<script defer src="/assets/js/pages/admin/story.js"></script>
+<script src="/assets/js/file-upload.js"></script>

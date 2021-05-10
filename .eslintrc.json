@@ -1,0 +1,48 @@
+{
+    "extends": [
+        "airbnb-base",
+        "eslint:recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "arrowFunctions": true
+        }
+    },
+    "plugins": [],
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "globals": {
+        "document": true,
+        "axios": true,
+        "swal": true,
+        "$": true,
+        "initPaginationTemplate": true,
+        "HttpService": true
+    },
+    "rules": {
+        "linebreak-style": 0,
+        "indent": ["error", 4],
+        "quotes": ["error", "single"],
+        "semi": "error",
+        "no-console": "error",
+        "camelcase":"off",
+        "class-methods-use-this": "off",
+        "max-len": ["warn", 150],
+        "no-useless-catch": "off",
+        "no-param-reassign": "off",
+        "no-continue": "off",
+        "no-underscore-dangle": ["error", { "allow": ["options_", "_id"] }],
+        "no-useless-constructor": "off",
+        "global-require": "off",
+        "func-names": "off",
+        "consistent-return": "off",
+        "array-callback-return": "off",
+        "no-use-before-define": "off",
+        "no-unused-expressions": "off"
+    }
+}

@@ -1,0 +1,71 @@
+<div class="content-wrapper">
+    {{!-- <div class="page-header">
+        <h3 class="page-title"> Basic Tables </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+            </ol>
+        </nav>
+    </div> --}}
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Danh sách thể loại</h4>
+                    <button type="button" id="btn-show-modal-create" class="btn btn-success" data-toggle="modal" data-target="#form-modal">Thêm
+                        mới</button>
+                    </p>
+                    <table class="table table-bordered" id="category-table">
+                        <thead>
+                            <tr>
+                                <th> STT </th>
+                                <th> Tên thể loại </th>
+                                <th> Ngày tạo </th>
+                                <th> Trạng thái </th>
+                                <th> Thao tác </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="block-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="form-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="form-modal-label">Thêm mới thể loại</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name" class="col-form-label">Tên thể loại</label>
+                        <input type="text" class="form-control" name="name" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Mô tả</label>
+                        <textarea class="form-control" name="description" id="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer src="/assets/js/pages/stuff.js"></script>
+<script defer src="/assets/js/pages/pagination.js"></script>
+<script defer src="/assets/js/pages/admin/category.js"></script>

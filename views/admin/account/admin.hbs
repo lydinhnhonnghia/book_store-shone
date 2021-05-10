@@ -1,0 +1,92 @@
+<style>
+    [data-action="update"] .form-password {
+        display: none;
+    }
+</style>
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Danh sách tài khoản Admin</h4>
+                    <button type="button" id="btn-show-modal-create" class="btn btn-success" data-toggle="modal"
+                        data-target="#form-modal">Thêm
+                        mới</button>
+                    </p>
+                    <table class="table table-bordered" id="account-table">
+                        <thead>
+                            <tr>
+                                <th> STT </th>
+                                <th> Tên tài khoản </th>
+                                <th> Họ </th>
+                                <th> Tên </th>
+                                <th> Số điện thoại </th>
+                                <th> Email </th>
+                                <th> Ngày tạo </th>
+                                <th> Trạng thái </th>
+                                <th> Thao tác </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div class="block-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="form-modal" tabindex="-1" role="dialog" aria-labelledby="form-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="form-modal-label">Thông tin tài khoản</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="col-form-label">Tên tài khoản</label>
+                        <input type="text" class="form-control" name="username" id="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-form-label">Họ</label>
+                        <input type="text" class="form-control" name="firstname" id="firstname">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-form-label">Tên</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname">
+                    </div>
+                    <div class="form-group form-password">
+                        <label for="password" class="col-form-label">Mật khẩu</label>
+                        <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <div class="form-group form-password">
+                        <label for="confirmPassword" class="col-form-label">Nhập lại mật khẩu</label>
+                        <input type="password" class="form-control" name="confirmPassword" id="confirm-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile" class="col-form-label">mobile</label>
+                        <input type="text" class="form-control" name="mobile" id="mobile">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-form-label">Email</label>
+                        <input type="text" class="form-control" name="email" id="email">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer src="/assets/js/pages/stuff.js"></script>
+<script defer src="/assets/js/pages/pagination.js"></script>
+<script defer src="/assets/js/pages/admin/accountAdmin.js"></script>

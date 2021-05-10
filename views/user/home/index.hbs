@@ -1,0 +1,46 @@
+<div class="content mb-5">
+    <div class="wrapper-slider">
+        <h3 class="wrapper-items-slider-title">Sách mới</h3>
+        <div class="wrapper-items-slider">
+            {{!-- <div class="wrapper-item-slider">
+                <img src="https://truyencv.com/images/poster/do-de-cua-ta-deu-la-trum-phan-dien-poster-1578750543-200x300.jpg"
+                    alt="">
+                <div class="wrapper-item-detail">
+                    <h3 class="wrapper-item-title">Đạo giới thiên hà</h3>
+                    <p class="wrapper-item-description">
+                        Thần bí trong thôn lạc đi ra thiếu niên thần bí, đạo tâm không có, đạo linh không thấu, đạo thể
+                        không thông, lại một
+                    </p>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="story-section">
+        {{#if infoMember.isLoggedIn}}
+        <div class="wrapper-book-items">
+            <div class="book-items-title">
+                <h3>Sách đã đánh dấu</h3>
+            </div>
+            <div class="book-items book-reading-list">
+            </div>
+        </div>
+        {{/if}}
+        <div class="wrapper-book-items">
+            <div class="book-items-title">
+                <h3>Sách mới cập nhật</h3>
+            </div>
+            <div class="book-items" id="books-new-updated">
+            </div>
+        </div>
+        <div class="wrapper-book-items">
+            <div class="book-items-title">
+                <h3>Sách xem nhiều</h3>
+            </div>
+            <div class="book-items book-reads">
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/assets/js/pages/pagination.js"></script>
+<script defer src="/assets/js/pages/user/home.js"></script>

@@ -1,0 +1,223 @@
+<style>
+  .root {
+    background: #eee;
+  }
+
+  .wrapper-content {
+    position: relative;
+  }
+
+  .block-chapter-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .chapter-content {
+    position: relative;
+    padding: 30px 40px;
+    background: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-width: 860px;
+  }
+
+  .block-actions {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .block-settings {
+    display: block;
+    width: 80px;
+    background: #fff;
+    top: 160px;
+    border-radius: 10px;
+    height: max-content;
+  }
+
+  .st-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .st-item-menu {
+    text-align: center;
+  }
+
+  .st-item-menu a {
+    font-size: 1.5em;
+    color: rgb(89, 87, 87);
+    transition: .3s;
+  }
+
+  .st-item-menu a:hover {
+    color: #000;
+  }
+
+  .block-arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .block-arrows span.item-arrow {
+    text-decoration: none;
+    color: rgb(89, 87, 87);
+    transition: .3s;
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+
+  .block-arrows span.item-arrow:not(.disabled):hover {
+    color: #000;
+  }
+
+  .block-arrows span.item-arrow.disabled {
+    cursor: not-allowed;
+    color: rgb(220 218 218);
+  }
+
+  .read-content p {
+    font-size: 20px;
+  }
+
+  .wrapper-chapters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .item-chapter {
+    width: 300px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    ;
+  }
+</style>
+
+<div class="content">
+  <div class="wrapper-content">
+    <div class="block-actions">
+      <div class="block-settings">
+        <ul class="st-menu">
+          <li class="st-item-menu item-sl-chapters">
+            <a href="#" title="Đánh dấu">
+              <i class="mdi mdi-bookmark-outline"></i>
+            </a>
+          </li>
+          <li class="st-item-menu item-sl-chapters">
+            <a href="#" title="Danh sách chương">
+              <i class="mdi mdi-menu"></i>
+            </a>
+            {{!-- <div class="wrapper-chapters">
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+              <div class="item-chapter"> <a href="#">Chương 1</a> </div>
+            </div> --}}
+          </li>
+          <li class="st-item-menu item-sl-showing">
+            <a href="#" title="Cài đặt hiển thị">
+              <i class="mdi mdi-settings"></i>
+            </a>
+          </li>
+          <li class="st-item-menu item-sl-view-info">
+            <a href="#" title="Thông tin truyện">
+              <i class="mdi mdi-arrow-left"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block-chapter-content" data-chapterNumber="{{infoChapter.chapterNumber}}"
+      data-storyOId="{{infoChapter.storyOId}}">
+      <div class="chapter-content">
+        <div class="block-arrows">
+          {{#if infoChapter.isNotFirstChapter}}
+          <span class="item-arrow item-arrow-left">
+            <i class="mdi mdi-arrow-left-bold-circle"></i>
+            Chương trước
+          </span>
+          {{else}}
+          <span class="item-arrow disabled">
+            <i class="mdi mdi-arrow-left-bold-circle"></i>
+            Chương trước
+          </span>
+          {{/if}}
+          <h2>{{infoChapter.storyName}}</h2>
+
+          {{#if infoChapter.isNotLastChapter}}
+          <span class="item-arrow item-arrow-right">
+            Chương sau
+            <i class="mdi mdi-arrow-right-bold-circle"></i>
+          </span>
+          {{else}}
+          <span class="item-arrow disabled">
+            Chương sau
+            <i class="mdi mdi-arrow-right-bold-circle"></i>
+          </span>
+          {{/if}}
+        </div>
+        <div class="block-content mb-5 mt-5">
+          <div class="title-chapter mb-5">
+            <h2>Chương {{infoChapter.chapterNumber}}: {{infoChapter.title}}!</h2>
+          </div>
+          <div class="read-content">
+            {{#compilehtml infoChapter.content}}{{/compilehtml}}
+          </div>
+        </div>
+        <div class="block-arrows">
+          {{#if infoChapter.isNotFirstChapter}}
+          <span class="item-arrow item-arrow-left">
+            <i class="mdi mdi-arrow-left-bold-circle"></i>
+            Chương trước
+          </span>
+          {{else}}
+          <span class="item-arrow disabled">
+            <i class="mdi mdi-arrow-left-bold-circle"></i>
+            Chương trước
+          </span>
+          {{/if}}
+          {{#if infoChapter.isNotLastChapter}}
+          <span class="item-arrow item-arrow-right">
+            Chương sau
+            <i class="mdi mdi-arrow-right-bold-circle"></i>
+          </span>
+          {{else}}
+          <span class="item-arrow disabled">
+            Chương sau
+            <i class="mdi mdi-arrow-right-bold-circle"></i>
+          </span>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/pages/user/chapter.js"></script>

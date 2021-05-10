@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="/assets/css/tabs.css">
+<style>
+  .block-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+
+  .wrapper-img-profile {
+    margin-right: 30px;
+  }
+
+  .wrapper-img-profile img {
+    width: 250px;
+    height: 300px;
+    border: 5px solid #e4e1e1;
+    border-radius: 10px;
+  }
+
+  .wrapper-chapters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .item-chapter {
+    width: 300px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    ;
+  }
+</style>
+<div class="content">
+  <div class="wrapper-content" data-storyOId="{{storyOId}}" data-accountOId="{{infoMember.accountOId}}">
+    <div class="block-details">
+      <div class="wrapper-img-profile">
+        <img src="{{infoStory.profileImage}}" alt="">
+      </div>
+      <div class="wrapper-content">
+        <h3>{{infoStory.name}}</h3>
+        <p>Thể loại: {{infoStory.categoryName}}</p>
+        <p>Tác giả: {{infoStory.authorName}}</p>
+        <div class="vote">
+          {{!-- <span>*****</span> --}}
+          <span>4.94/5 (48 đánh giá)</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-rounded btn-gradient-info" href="/story/{{storyOId}}/0">Đọc truyện</a>
+          {{#if infoMember.isLoggedIn}}
+          <button
+            class="btn btn-rounded {{#if infoStory.bookmarked}}btn-gradient-success bookmarked{{else}}btn-gradient-light{{/if}}"
+            id="bookmark">{{#if infoStory.bookmarked}}Bỏ đánh dấu{{else}}Đánh dấu{{/if}}</button>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="block-menu-actions mt-5 mb-5">
+      <div class="tab">
+        <button class="tablinks active" data-href="#introduce">Giới thiệu</button>
+        <button class="tablinks" data-href="#chapters">Danh sách chương</button>
+      </div>
+
+      <div class="tabcontent active" id="introduce">
+        {{#compilehtml infoStory.description}} {{/compilehtml}}
+      </div>
+
+      <div class="tabcontent" id="chapters">
+        <h3>Danh sách chương</h3>
+        <div class="wrapper-chapters">
+        </div>
+        <div class="block-pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/pages/pagination.js"></script>
+<script src="/assets/js/pages/user/story.js"></script>
+<script>
+
+  document.querySelectorAll('.tablinks').forEach((btnTab) => {
+    btnTab.addEventListener('click', function (evt) {
+      document.querySelectorAll('.tablinks').forEach((btnTab1) => {
+        btnTab1.classList.remove('active');
+      })
+      this.classList.add('active');
+      const idTabcontent = evt.target.dataset.href;
+      document.querySelectorAll('.tabcontent').forEach((tabCt) => {
+        tabCt.classList.remove('active');
+      })
+      document.querySelector(idTabcontent).classList.add('active');
+    })
+  })
+</script>

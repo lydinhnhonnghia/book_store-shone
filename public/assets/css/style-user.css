@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Tamma 2', cursive;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.page-hd {
+    background: #48707b;
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+.header-ur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    width: 100%;
+}
+
+.hd-menu-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hd-nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.hd-nav-menu li {
+    list-style-type: none;
+}
+
+.hd-menu-left .hd-nav-menu li {
+    margin-right: 20px;
+}
+
+.hd-menu-right .hd-nav-menu li {
+    margin-left: 20px;
+}
+
+.hd-nav-menu li a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.mdi-icon-user {
+    color: #fff;
+    font-size: 22px;
+}
+
+.main{
+    /* padding-top: 135px; */
+}
+
+
+/* slider */
+
+.wrapper-slider {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.wrapper-items-slider-title{
+    text-align: center;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.wrapper-items-slider-title::after{
+    content: '';
+    width: 30%;
+    background: #b5b5b5;
+    position: absolute;
+    height: 2px;
+    bottom: -2px;
+    display: block;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.wrapper-items-slider {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center
+}
+
+.wrapper-item-slider {
+    padding: 10px;
+    color: #fff;
+    background: #222;
+    width: 300px;
+    height: 350px;
+    margin: 15px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.wrapper-item-slider img{
+    width: 180px;
+    height: 200px;
+    margin-bottom: 5px;
+}
+
+.wrapper-item-title{
+    font-size: 1.3em;
+}
+
+.divider{
+    height: 30px;
+    width: 100%;
+}
+
+/* story-section */
+.story-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.wrapper-book-items{
+    width: 300px;
+    margin-right: 20px;
+}
+
+.book-items-title{
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.book-items-title::after{
+    content: '';
+    width: 100%;
+    background: #b5b5b5;
+    position: absolute;
+    height: 1px;
+    bottom: -2px;
+    display: block;
+    left: 0%;
+}
+
+.book-items .book-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-item-detail{
+    display: flex;
+}
+
+.book-item-detail img{
+    width: 40px;
+    height: 48px;
+}
+
+.book-item-detail .detail{
+    margin-left: 5px;
+}
+
+.book-item-title{
+    font-size: 1em;
+}
+.book-item-title a{
+    text-decoration: none;
+    font-size: 1em;
+    color: #343a40;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.book-item{
+    position: relative;
+}
+
+.book-item::after{
+    content: '';
+    width: 100%;
+    background: #b5b5b5;
+    position: absolute;
+    height: 1px;
+    bottom: 10px;
+    display: block;
+    left: 0%;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #171717;
+    color: #a0a0a0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+footer .box-footer{
+    width: 400px;
+}
+
+.box-footer .title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.items-social{
+    list-style-type: none;
+}
+.item-social a{
+    font-size: 1.2em;
+    color: #a0a0a0;
+}
+.item-social i{
+    font-size: 1.5em;
+}
+
+
+.copyright{
+    height: 40px;
+    width: 100%;
+    background: #2b2b2b;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #969696;
+}
+
+.copyright p{
+    margin-bottom: 0;
+}

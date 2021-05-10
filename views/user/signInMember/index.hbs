@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="/assets/css/style-login.css">
+<div class="modal fade" id="form-sign-in-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="wrappter-form-sign-in row ml-0 mr-0" id="container">
+                <div class="col-md-12">
+                    <div class="form-container sign-up-container col-md-6">
+                        <form action="#" id="form-sign-up">
+                            <h1>Create Account</h1>
+                            {{!-- <div class="social-container">
+                                <a href="#" class="social"><i class="mdi mdi-facebook"></i></a>
+                                <a href="#" class="social"><i class="mdi mdi-google"></i></a>
+                            </div>
+                            <span>or use your email for registration</span> --}}
+                            <input type="text" name="username" placeholder="Tên đăng nhập" />
+                            <input type="text" name="firstname" placeholder="Họ" />
+                            <input type="text" name="lastname" placeholder="Tên" />
+                            <input type="password" name="password" placeholder="Mật khẩu" />
+                            <input type="password" name="confirmPassword" placeholder="Xác nhận mật khẩu" />
+                            <button type="button" id="sign-up">Sign Up</button>
+                        </form>
+                    </div>
+                    <div class="form-container sign-in-container col-md-6">
+                        <form action="#" id="form-sign-in">
+                            <h1>Sign in</h1>
+                            {{!-- <div class="social-container">
+                                <a href="#" class="social"><i class="mdi mdi-facebook"></i></a>
+                                <a href="#" class="social"><i class="mdi mdi-google"></i></a>
+                            </div>
+                            <span>or use your account</span> --}}
+                            <input type="text" name="username" placeholder="Tên đăng nhập" />
+                            <input type="password" name="password" placeholder="Mật khẩu" />
+                            <a href="#">Forgot your password?</a>
+                            <button type="button" id="sign-in">Sign In</button>
+                        </form>
+                    </div>
+                    <div class="overlay-container">
+                        <div class="overlay">
+                            <div class="overlay-panel overlay-left">
+                                <h1>Welcome Back!</h1>
+                                <p>To keep connected with us please login with your personal info</p>
+                                <button class="ghost" id="signIn">Sign In</button>
+                            </div>
+                            <div class="overlay-panel overlay-right">
+                                <h1>Hello, Friend!</h1>
+                                <p>Enter your personal details and start journey with us</p>
+                                <button class="ghost" id="signUp">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', () => {
+        console.log(window.scrollY)
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    });
+    const signUpButtonMove = document.getElementById('signUp');
+    const signInButtonMove = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButtonMove && signUpButtonMove.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+        $('#form-sign-in-up').modal('show');
+    });
+
+    signInButtonMove && signInButtonMove.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+        $('#form-sign-in-up').modal('show');
+    });
+
+    const linkSignIn = document.getElementById('link-sign-in');
+    const linkSignup = document.getElementById('link-sign-up');
+    linkSignIn && linkSignIn.addEventListener('click', () => {
+        signInButtonMove.click();
+    })
+    linkSignup && linkSignup.addEventListener('click', () => {
+        signUpButtonMove.click();
+    })
+</script>
+<script src="/assets/js/pages/user/handle-signin-up-mb.js"></script>

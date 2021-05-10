@@ -1,0 +1,93 @@
+<style>
+    .ck-content.ck-editor__editable{
+        min-height: 200px;
+    }
+</style>
+<div class="content-wrapper" data-story="{{story}}">
+    {{!-- <div class="page-header">
+        <h3 class="page-title"> Danh sách truyện </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+            </ol>
+        </nav>
+    </div> --}}
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Danh sách chương của truyện</h4>
+                    <div class="row">
+                        <form class="row" id="form-chapter" data-action="create">
+                            <div class="col-md-12 mt-4">
+                                <h4 class="card-title">Thông tin truyện</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="book-code" class="col-form-label">Mã sách</label>
+                                    <input type="text" class="form-control" name="code" id="book-code" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="book-name" class="col-form-label">Tên sách</label>
+                                    <input type="text" class="form-control" name="name" id="book-name" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="category-name" class="col-form-label">Tên thể loại</label>
+                                    <input type="text" class="form-control" name="categoryName" id="category-name"
+                                        disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="author-name" class="col-form-label">Tên tác giả</label>
+                                    <input type="text" class="form-control" name="authorName" id="author-name" disabled>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <div class="row mt-4">
+                                    <div class="col-md-7">
+                                        <h4 class="card-title">Thông tin chương</h4>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <button type="button" class="btn btn-success float-right" id="save">Lưu</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="chapter" class="col-form-label">Chọn chương cần cập nhật</label>
+                                    <select class="form-control chapters" name="chapterOId" id="chapters"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="chapter-number" class="col-form-label">Chương số</label>
+                                    <input type="text" class="form-control" name="chapterNumber" id="chapter-number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="title" class="col-form-label">Tiêu đề</label>
+                                    <input type="text" class="form-control" name="title" id="title">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="content" class="col-form-label">Nội dung</label>
+                                    <textarea class="form-control" name="content" id="content">
+
+                                </textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+<script src="/assets/js/pages/stuff.js"></script>
+<script src="/assets/js/pages/admin/chapter.js"></script>
